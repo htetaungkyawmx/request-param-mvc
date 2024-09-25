@@ -14,6 +14,8 @@ public class WelcomeController {
         return "Hello !" + name.orElse(null) + " . ";
     }
 
+    //curl "http://localhost:8080/info"
+    //curl "http://localhost:8080/info?country=UK" /*change country*/
     @GetMapping("/info")
     public String info(@RequestParam(value = "country", required = false, defaultValue = "USA")String country,
                        @RequestParam(value = "age", required = false, defaultValue = "20")int age,
